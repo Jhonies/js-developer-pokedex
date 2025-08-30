@@ -1,7 +1,12 @@
 # Pokedex
 
 Um projeto simples de Pokedex construído com HTML, CSS e JavaScript, consumindo a PokeAPI.
- Este projeto permite visualizar uma lista de Pokémons e, na minha contribuição ao clicar em um deles, exibe seus detalhes como tipo, altura, peso e habilidades.
+ Este projeto permite visualizar uma lista de Pokémons e, na minha contribuição, ao clicar em um deles, exibe seus detalhes como tipo, altura, peso e habilidades.
+
+## Preview
+
+<img width="1896" height="948" alt="image" src="https://github.com/user-attachments/assets/35716ad2-792f-4f75-9a0b-daec72de4896" />
+
 
 ## Funcionalidades
 
@@ -51,7 +56,7 @@ Bash
 Abra o arquivo index.html no seu navegador web. Não é necessário um servidor local, pois o projeto não possui back-end.
 
 Estrutura de Pastas
-.
+```.
 ├── assets/
 │   ├── css/
 │   │   ├── global.css      # Estilos globais e resets
@@ -60,7 +65,8 @@ Estrutura de Pastas
 │       ├── main.js         # Lógica principal da aplicação
 │       ├── poke-api.js     # Lógica para consumo da PokeAPI
 │       └── pokemon-model.js  # Modelo de objeto para o Pokémon
-└── index.html              # Página principal da aplicação
+└── index.html              # Página principal da aplicação 
+```
 
 ### Linceça
 
