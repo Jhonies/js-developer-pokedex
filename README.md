@@ -68,6 +68,16 @@ Estrutura de Pastas
 └── index.html              # Página principal da aplicação 
 ```
 
+### Observação Importante sobre o Projeto
+
+Este projeto utiliza caminhos relativos para carregar os arquivos CSS e JavaScript (ex: assets/css/global.css).
+
+Isso é uma prática recomendada para projetos hospedados em plataformas como o GitHub Pages, garantindo que o site funcione corretamente.
+
+No entanto, isso pode causar um problema se você tentar executar o index.html diretamente no seu computador sem um servidor local. Nesse caso, o navegador não conseguirá encontrar os arquivos, e a página aparecerá sem formatação e funcionalidade.
+
+Para uma experiência local, é ideal usar uma extensão como o "Live Server" no VS Code ou abrir a pasta do projeto em um servidor local. Isso simula o ambiente do GitHub Pages e resolve o problema dos caminhos.
+
 ### Linceça
 
 Desenvolvido para fins de estudos!
