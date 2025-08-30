@@ -60,7 +60,8 @@ Estrutura de Pastas
 │       ├── main.js         # Lógica principal da aplicação
 │       ├── poke-api.js     # Lógica para consumo da PokeAPI
 │       └── pokemon-model.js  # Modelo de objeto para o Pokémon
-└── index.html              # Página principal da aplicação ```
+└── index.html              # Página principal da aplicação 
+```
 
 ### Linceça
 
