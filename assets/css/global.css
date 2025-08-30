@@ -4,20 +4,14 @@
 }
 
 body {
-    background-color: #f6f8fc;
-}
-
-.content {
-    width: 100vw;
-    height: 100vh;
-    padding: 1rem;
-    background-color: #fff;
+    background-color: #f6f8fc; /* Fundo cinza claro para a página toda */
+    margin: 0;
 }
 
 @media screen and (min-width: 992px) {
-    .content {
+    .content-wrapper {
         max-width: 992px;
-        height: auto;
+        /* height: auto; */ /* já é o padrão para min-height */
         margin: 1rem auto;
         border-radius: 1rem;
     }

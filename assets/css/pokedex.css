@@ -6,6 +6,188 @@
     list-style: none;
 }
 
+/* Container principal para a Pokedex e o painel de detalhes */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 992px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+.pokemon-details-panel {
+    display: none;
+    background-color: #f6f8fc;
+    border-radius: 1rem;
+    padding: 1rem; /* Padrao para mobile */
+    margin: 1rem;
+    overflow-y: auto;
+}
+
+
+.pokedex-list-section {
+    width: 100%; /* Em telas pequenas, a lista ocupa 100% */
+}
+
+@media screen and (min-width: 992px) {
+    /* Estado inicial: Pokedex completa */
+    .pokemons {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    /* Regras para o layout de duas colunas, ativadas pela classe .has-details no main-content */
+    .main-content.has-details {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    .pokedex-list-section.has-details {
+        width: 40%;
+        padding-right: 1rem;
+    }
+
+    .pokedex-list-section.has-details .pokemons {
+        grid-template-columns: 1fr 1fr; /* Lista de pokemons com 2 colunas */
+        gap: 1rem;
+    }
+
+    .pokemon-details-panel.has-details {
+        display: block;
+        width: 55%;
+        padding: 2rem;
+    }
+}
+
+.back-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #555;
+}
+
+/* Estilo para o cabeçalho do painel de detalhes */
+.details-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    padding: 2rem 1rem 1rem; /* Padding superior, lateral, inferior */
+    border-radius: 1rem;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    min-height: 200px; /* Garante uma altura mínima para o header */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    margin-bottom: 2rem; /* Espaço entre o header e o corpo */
+}
+
+.details-header.grass { background-color: #77c850;}
+.details-header.fire { background-color: #ee7f30;}
+.details-header.water { background-color: #678fee;}
+.details-header.electric {background-color: #f7cf2e}
+.details-header.ice {background-color: #98d5d7;}
+.details-header.ground {background-color: #dfbf69;}
+.details-header.flying {background-color: #a98ff0;}
+.details-header.poison {background-color: #a040a0;}
+.details-header.fighting {background-color: #bf3029;}
+.details-header.psychic {background-color: #f65687;}
+.details-header.dark {background-color: #725847;}
+.details-header.rock {background-color: #b8a137;}
+.details-header.bug {background-color: #a8b720;}
+.details-header.ghost {background-color: #6e5896;}
+.details-header.steel {background-color: #b9b7cf;}
+.details-header.dragon {background-color: #6f38f6;}
+.details-header.fairy {background-color: #f9aec7;}
+
+.details-header .name {
+    margin: 0;
+    font-size: 2.5rem; /* Aumenta o tamanho da fonte */
+    text-transform: capitalize;
+    z-index: 1; /* Garante que o nome esteja acima da imagem (se sobrepor) */
+}
+
+.details-header .number {
+    opacity: 0.5;
+    font-size: 1.5rem;
+    margin-top: -0.5rem;
+}
+
+.details-header .types-container {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0.8rem 0; /* Ajusta a margem */
+    z-index: 1;
+}
+
+.details-header .types-container .type {
+    color: #fff;
+    padding: 0.35rem 0.8rem; /* Aumenta o padding */
+    margin: 0 0.4rem; /* Ajusta a margem */
+    font-size: 0.9rem; /* Aumenta a fonte */
+    border-radius: 1rem;
+    filter: brightness(1.1);
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para os tipos */
+}
+
+.details-header img {
+    width: 150px; /* Aumenta o tamanho da imagem */
+    height: 150px;
+    position: absolute;
+    bottom: -75px; /* Ajusta a posição para o novo tamanho da imagem (metade do height) */
+    right: 1rem; /* Posiciona a imagem à direita */
+    z-index: 0; /* Coloca a imagem atrás do texto */
+    filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.2)); /* Adiciona uma sombra na imagem */
+}
+
+
+/* Estilo para o corpo do painel de detalhes */
+.details-body {
+    background-color: #fff;
+    border-radius: 1rem;
+    margin-top: 5rem; /* Mais espaço para a imagem do Pokémon se sobrepor */
+    padding: 2rem 1.5rem; /* Aumenta o padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+}
+
+.details-body h3 {
+    text-align: left; /* Alinha o "About" à esquerda */
+    margin-top: 0;
+    font-size: 1.5rem; /* Aumenta a fonte */
+    color: #333; /* Cor mais escura para o título */
+    border-bottom: 1px solid #eee; /* Linha mais fina */
+    padding-bottom: 0.8rem; /* Mais padding */
+    margin-bottom: 1.5rem; /* Mais espaço abaixo do título */
+}
+
+.details-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.details-body ul li {
+    font-size: 1rem; /* Aumenta a fonte */
+    margin: 0.8rem 0; /* Mais espaçamento entre os itens */
+    line-height: 1.6;
+    color: #555; /* Cor de texto mais suave */
+    display: flex; /* Para alinhar o strong e o valor */
+    justify-content: space-between; /* Espaço entre a propriedade e o valor */
+}
+
+.details-body ul li strong {
+    font-weight: 600; /* Um pouco mais de negrito */
+    color: #222; /* Cor mais escura para as propriedades */
+    min-width: 80px; /* Garante que a propriedade tenha um tamanho mínimo */
+}
+
 .normal {
     background-color: #a6a877;
 }
